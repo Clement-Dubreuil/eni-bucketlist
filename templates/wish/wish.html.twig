@@ -1,8 +1,0 @@
-{% extends 'base.html.twig' %}
-
-{% block body %}
-    <h1>{{ wish.title }}</h1>
-    <p>{{ wish.description }}</p>
-    <p class="author-date"><em>De {{ wish.author }} le {{ wish.dateCreated|format_datetime(locale='fr') }}</em></p>
-    <a href="{{ path('wishList') }}">< retour</a>
-{% endblock %}
