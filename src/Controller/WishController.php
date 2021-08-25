@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\WishRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -12,14 +13,9 @@ class WishController extends AbstractController
     /**
      * @Route("/wishList", name="wishList")
      */
-    public function wishList(): Response
+    public function wishList(WishRepository $wishRepo): Response
     {
-        $wishes = [
-            'Arrêter de fumer',
-            'Faire du sport',
-            'Faire un saut en parachute',
-            'Regarder Game of Thrones'
-        ];
+        $wishes = $wishRepo->findAllPublished();
 
         return $this->render('wish/wishList.html.twig', [
             'wishes' => $wishes,
@@ -29,18 +25,12 @@ class WishController extends AbstractController
     /**
      * @Route("/wish/{id}", name="wish")
      */
-    public function wish($id): Response
+    public function wish($id, WishRepository $wishRepo): Response
     {
-        $wishes = [
-            'Arrêter de fumer',
-            'Faire du sport',
-            'Faire un saut en parachute',
-            'Regarder Game of Thrones'
-        ];
+        $wish = $wishRepo->find($id);
 
         return $this->render('wish/wish.html.twig', [
-            'id' => $id,
-            'wish' => $wishes[$id],
+            'wish' => $wish,
         ]);
     }
 }

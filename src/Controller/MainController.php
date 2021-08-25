@@ -13,16 +13,8 @@ class MainController extends AbstractController
      */
     public function accueil(): Response
     {
-        $personnes[0]["nom"] = "Willis";
-        $personnes[0]["prenom"] = "Bruce";
-        $personnes[1]["nom"] = "PITT";
-        $personnes[1]["prenom"] = "Brad";
-        $personnes[2]["nom"] = "CRUISE";
-        $personnes[2]["prenom"] = "Tom";
 
-        return $this->render('main/accueil.html.twig', [
-            'personnes' => $personnes
-        ]);
+        return $this->render('main/accueil.html.twig');
     }
 
     /**

@@ -1,7 +1,8 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1 class="title">Souhait n°{{ id }}</h1>
-    <p> Je souhaite {{ wish }} avant de mourir !</p>
+    <h1>{{ wish.title }}</h1>
+    <p>{{ wish.description }}</p>
+    <p class="author-date"><em>De {{ wish.author }} le {{ wish.dateCreated|format_datetime(locale='fr') }}</em></p>
     <a href="{{ path('wishList') }}">< retour</a>
 {% endblock %}

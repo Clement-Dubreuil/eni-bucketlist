@@ -2,3 +2,11 @@
     height: 3em;
     width: 3em;
 }
+
+.author-date{
+    font-size: 0.8em;
+}
+
+.wishList-line{
+    cursor:pointer;
+}

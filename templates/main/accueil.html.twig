@@ -1,26 +1,6 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1 class="title">Liste des invités</h1>
-    <div class="col-4">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>Prénom</th>
-                <th>Nom</th>
-            </tr>
-            </thead>
-
-            <tbody>
-            {% for personne in personnes %}
-                <tr>
-                    <td>{{ loop.index }}</td>
-                    <td>{{ personne.nom }}</td>
-                    <td>{{ personne.prenom }}</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-    </div>
+    <h1>Bienvenue sur Bucket-List</h1>
+    <p>Ce site internet vous permettra de faire une liste de souhaits de choses à faire.</p>
 {% endblock %}

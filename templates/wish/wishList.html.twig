@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1 class="title">Liste des souhaits</h1>
+    <h1>Liste des souhaits</h1>
     <div class="col-4">
-        <table class="table table-striped">
+        <table class="table table-striped table-hover">
             <thead>
             <tr>
                 <th>#</th>
@@ -12,10 +12,10 @@
             </thead>
 
             <tbody>
-            {% for key, wish in wishes %}
-                <tr>
-                    <td>{{ key }}</td>
-                    <td><a href="{{ path('wish', {id: key}) }}"/>{{ wish }}</td>
+            {% for wish in wishes %}
+                <tr class="wishList-line" onclick="document.location='{{ path('wish', {id: wish.id}) }}'">
+                    <td>{{ loop.index }}</td>
+                    <td>{{ wish.title }}</td>
                 </tr>
             {% endfor %}
             </tbody>
