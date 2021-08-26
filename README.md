@@ -5,4 +5,4 @@
 
 - Création entité Wish
 - Repo : Afficher tous les souhaits, afficher les souhaits publiés, afficher un souhait par id
-- Entity Manager : Ajouter un souhait en dur
+- Entity Manager : Ajouter, Modification, Suppression d'un souhait
