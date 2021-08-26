@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="text-danger">Êtes-vous sûr de vouloir supprimer ce souhait?</h1>
+    <p>Titre: {{ wish.title }}</p>
+    <p>Description: {{ wish.description }}</p>
+    <p class="author-date"><em>De {{ wish.author }} le {{ wish.dateCreated|format_datetime(locale='fr') }}</em></p>
+    <form action="{{ path('adminDeleteWish', {id: wish.id}) }}" method="POST">
+        <div class="row">
+            <div class="col-3 d-flex justify-content-between">
+                <a class="btn btn-danger" href="{{ path('adminWishList') }}">Annuler</a>
+                <button type="submit" class="btn btn-success">Supprimer</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}

@@ -42,6 +42,11 @@ class Wish
      */
     private $dateCreated;
 
+    public function __construct()
+    {
+        $this->setDateCreated(new \DateTime());
+    }
+
     public function getId(): ?int
     {
         return $this->id;

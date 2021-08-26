@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Modifier un souhait</h1>
+    {{ form_start(formWish) }}
+
+        <div class="col-5">
+            {{ form_row(formWish.title) }}
+        </div>
+        <div class="col-5">
+            {{ form_row(formWish.description) }}
+        </div>
+        <div class="col-5">
+            {{ form_row(formWish.author) }}
+        </div>
+        <div class="col-5">
+            {{ form_row(formWish.isPublished) }}
+        </div>
+
+        <div class="row">
+            <div class="col-5 d-flex justify-content-between">
+                <a class="btn btn-danger" href="{{ path('adminWishList') }}">Annuler</a>
+                <button type="submit" class="btn btn-primary">Modifier</button>
+            </div>
+        </div>
+
+    {{ form_end(formWish) }}
+{% endblock %}
